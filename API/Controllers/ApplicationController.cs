@@ -11,6 +11,7 @@ namespace API.Controllers
     {
         private readonly IApplicationRepository _repository = repository;
 
+        // admin
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -25,7 +26,8 @@ namespace API.Controllers
             return Ok(applicationsDTO);
         }
 
-        [HttpGet("between-dates/{begin}/{end}")]
+        // admin
+        [HttpGet("between/{begin}/{end}")]
         public async Task<IActionResult> GetBetweenDatesAsync([FromRoute] string begin, [FromRoute] string end)
         {
             if (!ModelState.IsValid)
@@ -49,6 +51,7 @@ namespace API.Controllers
             return Ok(applicationsDTO);
         }
 
+        // admin
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
@@ -67,6 +70,7 @@ namespace API.Controllers
             return Ok(application.ToDTOFromApplication());
         }
 
+        // guest, admin
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] CreateApplicationDTO dto)
         {
@@ -81,6 +85,7 @@ namespace API.Controllers
             return CreatedAtAction(nameof(GetById), new { id = application.Id }, application.ToDTOFromApplication());
         }
 
+        // admin
         [HttpPut]
         [Route("{id}")]
         public async Task<IActionResult> UpdateAsync([FromRoute] int id,[FromBody] UpdateApplicationDTO dto)
@@ -98,12 +103,12 @@ namespace API.Controllers
             }
 
             var updatedApplication = application.ToApplicationFromUpdateDTO(dto);
-
             await _repository.UpdateAsync(updatedApplication);
 
             return Ok(updatedApplication.ToDTOFromApplication());
         }
 
+        // admin
         [HttpDelete]
         [Route("{id}")]
         public async Task<IActionResult> DeleteAsync([FromRoute] int id)

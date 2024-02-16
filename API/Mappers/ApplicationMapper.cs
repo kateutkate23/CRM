@@ -5,20 +5,6 @@ namespace API.Mappers
 {
     public static class ApplicationMapper
     {
-        public static Application ToApplicationFromDTO(this ApplicationDTO dto)
-        {
-            Application application = new()
-            {
-                Name = dto.Name,
-                Email = dto.Email,
-                Message = dto.Message,
-                CreatedDate = dto.CreatedDate,
-                Status = dto.Status
-            };
-
-            return application;
-        }
-
         public static ApplicationDTO ToDTOFromApplication(this Application application)
         {
             ApplicationDTO dto = new()
