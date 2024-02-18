@@ -1,6 +1,7 @@
 ﻿using API.DTO.Application;
 using API.Interfaces;
 using API.Mappers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -13,6 +14,7 @@ namespace API.Controllers
 
         // admin
         [HttpGet]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> GetAll()
         {
             if (!ModelState.IsValid)
@@ -28,6 +30,7 @@ namespace API.Controllers
 
         // admin
         [HttpGet("between/{begin}/{end}")]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> GetBetweenDatesAsync([FromRoute] string begin, [FromRoute] string end)
         {
             if (!ModelState.IsValid)
@@ -53,6 +56,7 @@ namespace API.Controllers
 
         // admin
         [HttpGet("{id}")]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             if (!ModelState.IsValid)
@@ -88,6 +92,7 @@ namespace API.Controllers
         // admin
         [HttpPut]
         [Route("{id}")]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> UpdateAsync([FromRoute] int id,[FromBody] UpdateApplicationDTO dto)
         {
             if (!ModelState.IsValid) 
@@ -111,6 +116,7 @@ namespace API.Controllers
         // admin
         [HttpDelete]
         [Route("{id}")]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> DeleteAsync([FromRoute] int id)
         {
             if (!ModelState.IsValid)
