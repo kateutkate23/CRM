@@ -9,16 +9,16 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        </Grid.RowDefinitions> 
 
         <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Right">
-            <Button x:Name="MainBtn" Content="Главная" Width="150" Height="50"/>
-            <Button x:Name="ApplicationsBtn" Content="Услуги" Width="150" Height="50"/>
-            <Button x:Name="ProjectsBtn" Content="Проекты" Width="150" Height="50"/>
-            <Button x:Name="BlogBtn" Content="Блог" Width="150" Height="50"/>
-            <Button x:Name="ContactsBtn" Content="Контакты" Width="150" Height="50"/>
+            <Button x:Name="MainBtn" Content="Главная" Width="150" Height="50" FontSize="18" Click="MainBtn_Click"/>
+            <Button x:Name="ServicesBtn" Content="Услуги" Width="150" Height="50" FontSize="18" Click="ServicesBtn_Click"/>
+            <Button x:Name="ProjectsBtn" Content="Проекты" Width="150" Height="50" FontSize="18" Click="ProjectsBtn_Click"/>
+            <Button x:Name="BlogBtn" Content="Блог" Width="150" Height="50" FontSize="18" Click="BlogBtn_Click"/>
+            <Button x:Name="ContactsBtn" Content="Контакты" Width="150" Height="50" FontSize="18" Click="ContactsBtn_Click"/>
         </StackPanel>
         
-        <Frame x:Name="mainFrame" Grid.Row="1" Source="GuestMainPage.xaml"/>
+        <Frame x:Name="mainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Source="GuestMainPage.xaml"/>
     </Grid>
 </Window>

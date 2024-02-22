@@ -9,13 +9,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Images\map.jpg" />
+    <None Remove="Resources\Images\x.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\API\API.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\Admin\" />
-    <Folder Include="ViewModels\Guest\" />
     <Folder Include="Windows\Admin\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\map.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\x.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
