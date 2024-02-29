@@ -51,7 +51,7 @@ namespace WPF.Windows.Guest
             {
                 mainFrame.NavigationService.RemoveBackEntry();
             }
-            mainFrame.Content = new GuestBlogPage();
+            mainFrame.Content = new GuestBlogsPage();
         }
     }
 }

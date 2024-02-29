@@ -49,6 +49,6 @@
                 Width="250" Height="75"
                 HorizontalAlignment="Right"
                 Margin="0, 0, 150, 0"
-                Content="Отправить" FontSize="22"/>
+                Content="Отправить" FontSize="22" Click="PostApplicationBtn_Click"/>
     </Grid>
 </Page>

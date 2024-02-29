@@ -3,10 +3,14 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WPF.Models"
+      xmlns:local="clr-namespace:WPF.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="GuestServicesPage">
+
+    <Page.DataContext>
+        <local:ServiceVM/>
+    </Page.DataContext>
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -17,14 +21,7 @@
         <TextBlock Grid.Row="0" Text="Услуги"
                    FontSize="36" TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
-        <ItemsControl Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <ItemsControl.ItemsSource>
-                <x:Array Type="{x:Type local:Service}">
-                    <local:Service Title="Услуга 1" Description="Описание услуги 1"/>
-                    <local:Service Title="Услуга 2" Description="Описание услуги 2"/>
-                    <local:Service Title="Услуга 3" Description="Описание услуги 3"/>
-                </x:Array>
-            </ItemsControl.ItemsSource>
+        <ItemsControl ItemsSource="{Binding ServicesCollection}" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Expander Header="{Binding Title}" FontSize="28">
