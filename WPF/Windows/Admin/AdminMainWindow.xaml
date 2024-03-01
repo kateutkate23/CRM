@@ -1,25 +1,27 @@
-﻿<Window x:Class="WPF.Windows.Guest.GuestMainWindow"
+﻿<Window x:Class="WPF.Windows.Admin.AdminMainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.ViewModels"
         mc:Ignorable="d"
-        Title="Главная" Height="720" Width="1280" ResizeMode="NoResize"
+        Title="Админ" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-        </Grid.RowDefinitions> 
+        </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Right">
+            <Button x:Name="ApplicationsBtn" Content="Заявки" Width="150" Height="50" FontSize="18" Click="ApplicationsBtn_Click"/>
             <Button x:Name="MainBtn" Content="Главная" Width="150" Height="50" FontSize="18" Click="MainBtn_Click"/>
-            <Button x:Name="ServicesBtn" Content="Услуги" Width="150" Height="50" FontSize="18" Click="ServicesBtn_Click"/>
-            <Button x:Name="ProjectsBtn" Content="Проекты" Width="150" Height="50" FontSize="18" Click="ProjectsBtn_Click"/>
-            <Button x:Name="BlogBtn" Content="Блог" Width="150" Height="50" FontSize="18" Click="BlogBtn_Click"/>
+            <Button x:Name="ServicesBtn" Content="Услуги" Width="150" Height="50" FontSize="18"/>
+            <Button x:Name="ProjectsBtn" Content="Проекты" Width="150" Height="50" FontSize="18"/>
+            <Button x:Name="BlogBtn" Content="Блог" Width="150" Height="50" FontSize="18"/>
             <Button x:Name="ContactsBtn" Content="Контакты" Width="150" Height="50" FontSize="18" Click="ContactsBtn_Click"/>
         </StackPanel>
-        
-        <Frame x:Name="mainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Source="GuestMainPage.xaml"/>
+
+        <Frame x:Name="mainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Source="AdminMainPage.xaml"/>
     </Grid>
 </Window>

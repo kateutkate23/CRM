@@ -1,27 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using WPF.ViewModels;
+using WPF.Windows.Admin;
+using WPF.Windows.Guest;
 
 namespace WPF.Windows
 {
-    /// <summary>
-    /// Логика взаимодействия для StartWindow.xaml
-    /// </summary>
     public partial class StartWindow : Window
     {
         public StartWindow()
         {
             InitializeComponent();
+        }
+
+        private async void SignIn_Click(object sender, RoutedEventArgs e)
+        {
+            var _vm = new AccountVM();
+            string? token = await _vm.SignInAsync(UsernameTextBox.Text, PasswordTextBox.Text);
+
+            if (token != null)
+            {
+                AdminMainWindow mainWindow = new(token);
+                mainWindow.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Что-то пошло не так.");
+            }
+        }
+
+        private void Continue_Click(object sender, RoutedEventArgs e)
+        {
+            GuestMainWindow mainWindow = new();
+            mainWindow.Show();
+            Close();
         }
     }
 }

@@ -5,8 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF.Windows"
         mc:Ignorable="d"
-        Title="StartWindow" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Вход" Height="450" Width="800" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Button x:Name="SignIn" Content="Войти" 
+                HorizontalAlignment="Left" 
+                Margin="213,275,0,0" 
+                VerticalAlignment="Top" 
+                Height="50" Width="150" FontSize="14" 
+                Click="SignIn_Click"/>
+        <Button x:Name="Continue" Content="Продолжить как гость" 
+                Margin="419,275,181,0" 
+                VerticalAlignment="Top" 
+                Height="50" FontSize="14" 
+                Click="Continue_Click"/>
+        <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Left" 
+                 Margin="316,170,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="230" Height="30"/>
+        <TextBlock HorizontalAlignment="Left" 
+                   Margin="261,100,0,0" 
+                   TextWrapping="Wrap" 
+                   Text="АВТОРИЗУЙТЕСЬ ДЛЯ ПОЛНОГО ДОСТУПА" 
+                   VerticalAlignment="Top"
+                   Height="30" Width="340" 
+                   FontSize="16" TextAlignment="Center"/>
+        <TextBox x:Name="PasswordTextBox" HorizontalAlignment="Left" 
+                   Margin="316,217,0,0" 
+                   TextWrapping="Wrap" 
+                   VerticalAlignment="Top" 
+                   Width="230" Height="30"/>
+        <TextBlock HorizontalAlignment="Left" 
+                   Margin="191,170,0,0" 
+                   TextWrapping="Wrap"
+                   Text="ЛОГИН:" 
+                   VerticalAlignment="Top" 
+                   Height="30" Width="100" 
+                   FontSize="16" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" 
+                   Margin="191,217,0,0" 
+                   TextWrapping="Wrap"
+                   Text="ПАРОЛЬ:" 
+                   VerticalAlignment="Top" 
+                   Height="30" Width="100" 
+                   FontSize="16" TextAlignment="Center"/>
     </Grid>
 </Window>
