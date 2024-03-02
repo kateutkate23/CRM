@@ -42,5 +42,14 @@ namespace WPF.Windows.Admin
             }
             mainFrame.Content = new AdminContactsPage();
         }
+
+        private void ServicesBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (mainFrame.Content != null)
+            {
+                mainFrame.NavigationService.RemoveBackEntry();
+            }
+            mainFrame.Content = new AdminServicesPage(Token);
+        }
     }
 }

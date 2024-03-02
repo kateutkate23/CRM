@@ -16,7 +16,7 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Right">
             <Button x:Name="ApplicationsBtn" Content="Заявки" Width="150" Height="50" FontSize="18" Click="ApplicationsBtn_Click"/>
             <Button x:Name="MainBtn" Content="Главная" Width="150" Height="50" FontSize="18" Click="MainBtn_Click"/>
-            <Button x:Name="ServicesBtn" Content="Услуги" Width="150" Height="50" FontSize="18"/>
+            <Button x:Name="ServicesBtn" Content="Услуги" Width="150" Height="50" FontSize="18" Click="ServicesBtn_Click"/>
             <Button x:Name="ProjectsBtn" Content="Проекты" Width="150" Height="50" FontSize="18"/>
             <Button x:Name="BlogBtn" Content="Блог" Width="150" Height="50" FontSize="18"/>
             <Button x:Name="ContactsBtn" Content="Контакты" Width="150" Height="50" FontSize="18" Click="ContactsBtn_Click"/>
