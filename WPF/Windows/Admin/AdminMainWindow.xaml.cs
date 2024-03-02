@@ -51,5 +51,23 @@ namespace WPF.Windows.Admin
             }
             mainFrame.Content = new AdminServicesPage(Token);
         }
+
+        private void ProjectsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (mainFrame.Content != null)
+            {
+                mainFrame.NavigationService.RemoveBackEntry();
+            }
+            mainFrame.Content = new AdminProjectsPage(Token);
+        }
+
+        private void BlogBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (mainFrame.Content != null)
+            {
+                mainFrame.NavigationService.RemoveBackEntry();
+            }
+            mainFrame.Content = new AdminBlogsPage(Token);
+        }
     }
 }

@@ -44,9 +44,16 @@ namespace API.Helpers
         }
         public static void DeleteFile(string? path)
         {
-            if (File.Exists(path))
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
             {
-                File.Delete(path);
+                try
+                {
+                    File.Delete(path);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Ошибка при удалении файла: {ex.Message}");
+                }
             }
         }
     }
