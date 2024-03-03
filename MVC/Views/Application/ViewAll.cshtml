@@ -5,8 +5,20 @@
 }
 
 <h1>Заявки</h1>
+<form method="get" class="mt-3" asp-action="ViewInPeriod">
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Выбрать за:</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="selectedPeriod">
+            <option value="today">Сегодня</option>
+            <option value="yesterday">Вчера</option>
+            <option value="this week">Неделя</option>
+            <option value="all time">Все время</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Показать</button>
+</form>
 
-<table class="table">
+<table class="table mt-3">
     <thead>
         <tr>
             <th>Id</th>

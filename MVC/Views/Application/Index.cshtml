@@ -4,9 +4,13 @@
     ViewData["Title"] = "Главная";
 }
 
-<h1>IT-консалтинг без СМС и регистрации</h1>
-<h3>Оставить заявку или задать вопрос</h3>
-<form method="post" action="Send">
+<h1>@ViewData["MainTitle"]</h1>
+@if (User?.IsInRole("Admin") == true)
+{
+    <a type="submit" class="btn btn-primary mt-3" asp-controller="Application" asp-action="ChangeTitle">Редактировать</a>
+}
+<h3 class="mt-3">Оставить заявку или задать вопрос</h3>
+<form method="post">
     <div class="form-group">
         <label for="exampleInputPassword1">Имя:</label>
         <input type="text" class="form-control" id="exampleInputPassword1" asp-for="Name">

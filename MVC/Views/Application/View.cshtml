@@ -5,7 +5,7 @@
 }
 
 <h2>Изменить статус</h2>
-<form method="post" asp-action="View" class="mt-3">
+<form method="post" asp-action="UpdateStatus" class="mt-3">
     <div class="mb-3">
         <label for="exampleInputEmail1">Id</label>
         <input type="text" class="form-control" asp-for="Id" readonly>
@@ -13,6 +13,10 @@
     <div class="mb-3">
         <label for="exampleInputEmail1">Имя</label>
         <input type="text" class="form-control" asp-for="Name" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="text" class="form-control" asp-for="Email" readonly>
     </div>
     <div class="mb-3">
         <label for="exampleInputEmail1">Сообщение</label>
@@ -25,11 +29,11 @@
     <div class="mb-3">
         <label for="exampleFormControlSelect1">Статус</label>
         <select class="form-control" id="exampleFormControlSelect1" asp-for="Status">
-            <option>Received</option>
-            <option>AtWork</option>
-            <option>Completed</option>
-            <option>Rejected</option>
-            <option>Cancelled</option>
+            <option value="Received">Received</option>
+            <option value="AtWork">AtWork</option>
+            <option value="Completed">Completed</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Cancelled">Cancelled</option>
         </select>
     </div>
     <button type="submit" asp-action="UpdateStatus" class="btn btn-primary">Обновить статус</button>
