@@ -1,0 +1,41 @@
+﻿@model List<Application>
+
+@{
+    ViewData["Title"] = "Заявки";
+}
+
+<h1>Заявки</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Имя</th>
+            <th>Email</th>
+            <th>Сообщение</th>
+            <th>Дата отправки</th>
+            <th>Статус</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var application in Model)
+            {
+                <tr>
+                    <td>@application.Id</td>
+                    <td>@application.Name</td>
+                    <td>@application.Email</td>
+                    <td>@application.Message</td>
+                    <td>@application.CreatedDate.ToString("dd-MM-yyyy")</td>
+                    <td>@application.Status</td>
+                    @if (User?.Identity?.IsAuthenticated == true && User.IsInRole("Admin"))
+                    {
+                        <td> <a href="view/@application.Id">Изменить статус</a> </td>
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>

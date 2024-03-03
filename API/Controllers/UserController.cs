@@ -41,7 +41,7 @@ namespace API.Controllers
             return Ok(new NewUserDTO { UserName = user.UserName, Token = await _tokenHelper.CreateToken(user) });
         }
 
-        ////admin added
+        //admin added
         //[HttpPost("register")]
         //public async Task<IActionResult> Register([FromBody] RegisterDTO dto)
         //{
