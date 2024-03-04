@@ -1,0 +1,11 @@
+﻿@model MVC.Models.Contacts
+
+<h2>Изменение контактов</h2>
+<form method="post">
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1" class="mt-3">Введите новые контактные данные:</label>
+        <textarea class="form-control mt-3" id="exampleFormControlTextarea1" rows="2" asp-for="ContactsText"></textarea>
+    </div>
+    <button type="submit" asp-action="ChangeContacts" class="btn btn-primary mt-3">Сохранить</button>
+    <button type="submit" asp-action="Index" class="btn btn-danger mt-3">Отмена</button>
+</form>

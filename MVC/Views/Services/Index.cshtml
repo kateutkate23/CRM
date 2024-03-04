@@ -1,0 +1,26 @@
+﻿@model List<MVC.Models.Service>
+
+@{
+    ViewBag.Title = "Услуги";
+}
+
+<div>
+    <h1>Услуги</h1>
+    @if (User.IsInRole("Admin"))
+    {
+        <a class="btn btn-primary" href="#">Добавить услугу</a>
+    }
+    @foreach (var service in Model)
+    {
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;" class="mt-3">
+            <h3>@service.Title</h3>
+            <p>@service.Description</p>
+            @if (User.IsInRole("Admin"))
+            {
+                <div>
+                    <a class="btn btn-secondary" href="#">Редактировать</a>
+                </div>
+            }
+        </div>
+    }
+</div>
