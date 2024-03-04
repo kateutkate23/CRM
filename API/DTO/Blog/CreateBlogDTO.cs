@@ -6,7 +6,7 @@ namespace API.DTO.Blog
     {
         [Required(ErrorMessage = "Необходим добавить заголовок блога!")]
         public string? Title { get; set; }
-        [Required(ErrorMessage = "Необходимо добавить изображение!")]
+        [Required(ErrorMessage = "Необходимо добавить описание!")]
         public string? Description { get; set; }
     }
 }

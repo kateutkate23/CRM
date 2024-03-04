@@ -1,0 +1,24 @@
+﻿@model MVC.ViewModels.BlogVM
+
+@{
+    ViewBag.Title = "Добавить пост";
+}
+
+<form method="post" asp-action="Add" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Title">Заголовок:</label>
+        <input asp-for="Title" class="form-control">
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Описание:</label>
+        <input asp-for="Description" class="form-control">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Изображение:</label>
+        <input asp-for="Image" type="file" class="form-control" placeholder="Выберите изображение">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Добавить</button>
+</form>

@@ -8,7 +8,7 @@
     <h1>Услуги</h1>
     @if (User.IsInRole("Admin"))
     {
-        <a class="btn btn-primary" href="#">Добавить услугу</a>
+        <a class="btn btn-primary" asp-action="Add" asp-controller="Services">Добавить услугу</a>
     }
     @foreach (var service in Model)
     {
@@ -18,7 +18,7 @@
             @if (User.IsInRole("Admin"))
             {
                 <div>
-                    <a class="btn btn-secondary" href="#">Редактировать</a>
+                    <a class="btn btn-secondary" asp-action="Edit" asp-controller="Services" asp-route-id="@service.Id">Редактировать</a>
                 </div>
             }
         </div>

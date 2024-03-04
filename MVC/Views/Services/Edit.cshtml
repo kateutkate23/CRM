@@ -1,0 +1,23 @@
+﻿@model MVC.Models.Service
+
+@{
+    ViewData["Title"] = $"Обновление услуги {Model.Id}";
+}
+
+<h2>Изменение услуги</h2>
+<form method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Id</label>
+        <input type="text" class="form-control" asp-for="Id" readonly>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1" class="mt-3">Введите новый заголовок:</label>
+        <textarea class="form-control mt-3" id="exampleFormControlTextarea1" rows="1" asp-for="Title"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1" class="mt-3">Введите новое описание:</label>
+        <textarea class="form-control mt-3" id="exampleFormControlTextarea1" rows="5" asp-for="Description"></textarea>
+    </div>
+    <button type="submit" asp-action="UpdateService" class="btn btn-primary mt-3">Сохранить</button>
+    <button type="submit" asp-action="DeleteService" class="btn btn-danger mt-3">Удалить услугу</button>
+</form>

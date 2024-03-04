@@ -1,0 +1,41 @@
+﻿@model List<MVC.Models.Blog>
+
+@{
+    ViewBag.Title = "Блог";
+}
+
+<h1>Блог</h1>
+@if (User.IsInRole("Admin"))
+{
+    <a class="btn btn-primary" asp-action="Add" asp-controller="Blog">Добавить пост</a>
+}
+<div class="album py-5 bg-light mt-3">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img src="@Url.Action("GetImage", "Image", new { imageName = item.ImageURL })" width="100%" height="225" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">@item.Title</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a type="btn btn-success" asp-controller="Blog" asp-action="View" asp-route-id="@item.Id"
+                                        class="btn btn-sm btn-outline-primary">Подробнее</a>
+                                    @if (User?.Identity?.IsAuthenticated == true && User.IsInRole("Admin"))
+                                    {
+                                        <a asp-controller="Blog" asp-action="Edit" asp-route-id="@item.Id"
+                                           class="btn btn-sm btn-outline-secondary">Редактировать</a>
+                                    }
+                                </div>
+                                <small class="text-muted">@item.CreatedDate.ToShortDateString()</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+           
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+﻿@model MVC.Models.Blog
+@{
+    ViewData["Title"] = $"Блог {Model.Id}";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <img class="img-thumbnail" src="@Url.Action("GetImage", "Image", new { imageName = Model.ImageURL })" style="width: 400px; height: 300px;" alt=""> <!-- Устанавливаем фиксированную ширину и высоту -->
+        </div>
+        <div class="col-md-12">
+            <h3 class="my-3">@Model.Title</h3>
+            <p>@Model.Description</p>
+        </div>
+    </div>
+    <a class="btn btn-primary mt-3" asp-controller="Blog" asp-action="Index">Назад</a>
+</div>
